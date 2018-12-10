@@ -51,5 +51,5 @@ maybe some of you face compile error like this
 
 In android source code (caf), It is already setup environment. like O=out/target/product/{TARGET_PRODUCT}/obj/kernel/,  toolchain=   ARCH=arm64/arm/x86/mips
 
-it's not kernel at all!
+it's not a problem with kernel at all!
 This can be fixed by redirecting output to a out folder as done in steps above
