@@ -2,7 +2,7 @@
 
 > Phone: Xiaomi Max 3
 
-> Toolchain used: 64bit toolchain from google
+> Toolchain used: aarch64-linux-android-4.9 from google
 
 Setup Build Environment
 My environment for build aosp and debug, not only for kernel
