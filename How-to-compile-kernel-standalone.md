@@ -31,7 +31,7 @@ $ export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
 
 ```
 make O=out nitrogen_user_defconfig
-make -j$(nproc) O=out
+make -j$(nproc) O=out 2>&1 | tee kernel.log
 ```
 
 After that, you can find many compiled files in the out directory.
@@ -53,3 +53,8 @@ In android source code (caf), It is already setup environment. like O=out/target
 
 it's not a problem with kernel at all!
 This can be fixed by redirecting output to a out folder as done in steps above
+
+# How to Get Help ?
+
+If you follow this guide and still getting some errors and you know that this is the problem in kernel than make a issue with link to your kernel.log file, you can use any paste services to upload it like
+pastebin.com
