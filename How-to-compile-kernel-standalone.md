@@ -1,5 +1,7 @@
 > Host: ubuntu 18.04
+
 > Phone: Xiaomi Max 3
+
 > Toolchain: aarch64-linux-android-4.9 From Android P
 
 Setup Build Environment
@@ -18,7 +20,7 @@ x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev xsltproc unzip
 
 Next , let us compile kernel
 ```
-$ git clone git@github.com:MiCode/Xiaomi_Kernel_OpenSource.git -b nitrogen-o-oss nitrogen-o-oss
+$ git clone https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b nitrogen-o-oss nitrogen-o-oss
 $ cd nitrogen-o-oss
 $ mkdir out
 $ export ARCH=arm64
@@ -47,4 +49,5 @@ Someone maybe find compile error  like
 ` error: msm_isp.h: No such file or directory`
 
 In android source code (caf) ,  It is already setup environment.  like O=out/target/product/{TARGET_PRODUCT}/obj/kernel/,  toolchain=   ARCH=arm64/arm/x86/mips
+
 it is no error with compile kernel
