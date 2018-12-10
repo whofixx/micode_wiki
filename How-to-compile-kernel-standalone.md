@@ -20,7 +20,7 @@ x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev xsltproc unzip
 
 Next , let us compile kernel
 ```
-$ git clone https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b nitrogen-o-oss nitrogen-o-oss
+$ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b nitrogen-o-oss nitrogen-o-oss
 $ cd nitrogen-o-oss
 $ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
 $ mkdir out
