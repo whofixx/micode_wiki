@@ -46,7 +46,7 @@ Please go to xda or Google search how to repack boot.img and repack dtbo.img
 
 Sometimes, you need compile wlan and audio(sdm845) modules if you find wifi and audio not work after flashing boot.img
 
-maybe somd of you face compile error love this
+maybe some of you face compile error like this
 ` error: msm_isp.h: No such file or directory`
 
 In android source code (caf), It is already setup environment. like O=out/target/product/{TARGET_PRODUCT}/obj/kernel/,  toolchain=   ARCH=arm64/arm/x86/mips
