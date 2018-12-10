@@ -57,4 +57,4 @@ This can be fixed by redirecting output to a out folder as done in steps above
 # How to Get Help ?
 
 If you follow this guide and still got some errors and you know that this is the problem with kernel than make a issue with link to your kernel.log file ( you'll find it in your kernel directory ), you can use any paste services to upload it like
-pastebin.com
+https://pastebin.com
