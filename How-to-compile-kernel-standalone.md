@@ -30,7 +30,7 @@ $ export CROSS_COMPILE=/code/android-p/prebuilts/gcc/linux-x86/aarch64/aarch64-l
 
 ```
 make O=out nitrogen_user_defconfig
-make -j24 O=out
+make -j$(nproc) O=out
 ```
 
 After that, you can find many compiled files in the out directory.
