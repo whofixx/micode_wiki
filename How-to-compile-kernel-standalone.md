@@ -2,7 +2,7 @@
 
 > Phone: Xiaomi Max 3
 
-> Toolchain: aarch64-linux-android-4.9 From Android P
+> Toolchain used: 64bit toolchain from google
 
 Setup Build Environment
 My environment for build aosp and debug, not only for kernel
@@ -22,10 +22,11 @@ Next , let us compile kernel
 ```
 $ git clone https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b nitrogen-o-oss nitrogen-o-oss
 $ cd nitrogen-o-oss
+$ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
 $ mkdir out
 $ export ARCH=arm64
 $ export SUBARCH=arm64
-$ export CROSS_COMPILE=/code/android-p/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+$ export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
 ```
 
 ```
