@@ -18,7 +18,10 @@ libxml-simple-perl bc libc6-dev-i386 lib32ncurses5-dev \
 x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev xsltproc unzip
 ```
 
+
 Next , let us compile kernel
+
+For non-dtbo such as Max3
 ```
 $ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b nitrogen-o-oss nitrogen-o-oss
 $ cd nitrogen-o-oss
@@ -28,9 +31,34 @@ $ export ARCH=arm64
 $ export SUBARCH=arm64
 $ export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
 ```
-
 ```
 make O=out nitrogen_user_defconfig
+make -j$(nproc) O=out 2>&1 | tee kernel.log
+```
+
+For include-dtbo, such as Mix 3
+
+if you have aosp, you can compile dtc that out/host/linux-x86/bin/dtc
+
+if you dont have aosp source code, then install it.
+
+`sudo apt-get install device-tree-compiler`
+
+```
+$ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b perseus-p-oss perseus-p-oss
+$ cd perseus-p-oss
+$ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
+$ mkdir out
+$ export ARCH=arm64
+$ export SUBARCH=arm64
+$ export DTC_EXT=dtc
+$ export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
+```
+
+Set [CONFIG_BUILD_ARM64_DT_OVERLAY=y](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/blob/perseus-p-oss/arch/arm64/configs/perseus_user_defconfig#L718)
+
+```
+make O=out perseus_user_defconfig
 make -j$(nproc) O=out 2>&1 | tee kernel.log
 ```
 
