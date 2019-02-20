@@ -65,15 +65,18 @@ make -j$(nproc) O=out 2>&1 | tee kernel.log
 For msm-4.14  like Mi 9
 
 dtc must be from aosp source code（pie-release）
-We use clang from qcom
-link:https://developer.qualcomm.com/download/sdllvm/snapdragon-llvm-compiler-android-linux64-609.tar.gz
-but it is compile ok from google
+Clang from qcom
 
 ```
 $ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b cepheus-p-oss cepheus-p-oss
 $ cd perseus-p-oss
 $ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
-$ git clone --depth=1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b master clang
+```
+You must get llvm clang from qcom.
+link: https://developer.qualcomm.com/download/sdllvm/snapdragon-llvm-compiler-android-linux64-609.tar.gz
+
+```
+$ tar vxzf snapdragon-llvm-compiler-android-linux64-609.tar.gz
 $ mkdir out
 $ export ARCH=arm64
 $ export SUBARCH=arm64
@@ -82,8 +85,8 @@ $ export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
 Set CONFIG_BUILD_ARM64_DT_OVERLAY=y
 ```
 ```
-make O=out REAL_CC=${PWD}/clang/clang-4691093/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- cepheus_user_defconfig
-make -j$(nproc) O=out REAL_CC=${PWD}/clang/clang-4691093/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- 2>&1 | tee kernel.log
+make O=out REAL_CC=${PWD}/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebuilt/linux-x86_64/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- cepheus_user_defconfig
+make -j$(nproc) O=out REAL_CC=${PWD}/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebuilt/linux-x86_64/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- 2>&1 | tee kernel.log
 ```
 
 After that, you can find many compiled files in the out directory.
