@@ -66,7 +66,7 @@ For msm-4.14  like Mi 9
 
 dtc must be from aosp source code（pie-release）
 We use clang from qcom
-link:https://developer.qualcomm.com/download/sdllvm/snapdragon-llvm-compiler-android-linux64.tar.gz
+link:https://developer.qualcomm.com/download/sdllvm/snapdragon-llvm-compiler-android-linux64-609.tar.gz
 but it is compile ok from google
 
 ```
