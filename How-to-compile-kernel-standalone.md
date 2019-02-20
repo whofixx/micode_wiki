@@ -69,7 +69,7 @@ dtc must be from aosp source code（pie-release）,
 $ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b cepheus-p-oss cepheus-p-oss
 $ cd perseus-p-oss
 $ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
-$ git clone --depth=1 https://github.com/ivan19871002/llvm-arm-toolchain-ship.git -b master clang
+$ git clone --depth=1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b master clang
 $ mkdir out
 $ export ARCH=arm64
 $ export SUBARCH=arm64
@@ -78,8 +78,8 @@ $ export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
 Set CONFIG_BUILD_ARM64_DT_OVERLAY=y
 ```
 ```
-make O=out REAL_CC=${PWD}/clang/6.0/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- cepheus_user_defconfig
-make -j$(nproc) O=out REAL_CC=${PWD}/clang/6.0/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- 2>&1 | tee kernel.log
+make O=out REAL_CC=${PWD}/clang/clang-4691093/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- cepheus_user_defconfig
+make -j$(nproc) O=out REAL_CC=${PWD}/clang/clang-4691093/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- 2>&1 | tee kernel.log
 ```
 
 After that, you can find many compiled files in the out directory.
