@@ -38,11 +38,8 @@ make -j$(nproc) O=out 2>&1 | tee kernel.log
 
 For include-dtbo, such as Mix 3
 
-if you have aosp, you can compile dtc that out/host/linux-x86/bin/dtc
+dtc must be from aosp source code（pie-release）
 
-if you dont have aosp source code, then install it.
-
-`sudo apt-get install device-tree-compiler`
 
 ```
 $ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b perseus-p-oss perseus-p-oss
