@@ -88,8 +88,6 @@ make -j$(nproc) O=out REAL_CC=${PWD}/toolchains/llvm-Snapdragon_LLVM_for_Android
 
 _**For violet-p-oss, vendor/violet-perf_defconfig instead of violet-perf_defconfig**_
 
-vendor/violet-perf_defconfig
-
 After that, you can find many compiled files in the out directory.
 You can find the kernel in this directory.
 `out/arch/arm64/boot`
