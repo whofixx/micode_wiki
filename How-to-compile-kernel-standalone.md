@@ -86,6 +86,10 @@ make O=out REAL_CC=${PWD}/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebui
 make -j$(nproc) O=out REAL_CC=${PWD}/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebuilt/linux-x86_64/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- 2>&1 | tee kernel.log
 ```
 
+_**For violet-p-oss, vendor/violet-perf_defconfig instead of violet-perf_defconfig**_
+
+vendor/violet-perf_defconfig
+
 After that, you can find many compiled files in the out directory.
 You can find the kernel in this directory.
 `out/arch/arm64/boot`
