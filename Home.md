@@ -3,7 +3,7 @@
 1. <a href="#what">What Is it?</a>
 
 <a name="what" />
-## What Is it?
+## What Is it?？
 
 It's a Linux kernel and supposed to be running on Xiaomi mobile phone without problem.
 
