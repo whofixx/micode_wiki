@@ -66,7 +66,7 @@ Clang from qcom
 
 ```
 $ git clone --depth=1 https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b cepheus-p-oss cepheus-p-oss
-$ cd perseus-p-oss
+$ cd cepheus-p-oss
 $ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 toolchain
 ```
 You must get llvm clang from qcom.
